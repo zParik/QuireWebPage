@@ -1,58 +1,30 @@
-// ── PDF stack parallax (Firefox fallback — scroll-driven CSS not supported) ──
+// ── Scroll reveal (IntersectionObserver) ─────────────────────────
 (function () {
-  if (CSS.supports('animation-timeline', 'scroll()')) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const pages = document.querySelectorAll('.pdf-page');
-  if (!pages.length) return;
-
-  // Mirror the CSS keyframe values: [rotate(deg), tx(px), ty(px), maxDrift(px)]
-  const config = {
-    '1': { r: -1.5, tx: 0,  ty: 0,  drift: 35 },
-    '2': { r:  2.8, tx: 8,  ty: 8,  drift: 52 },
-    '3': { r: -4,   tx: -6, ty: 16, drift: 66 },
-  };
-
-  const hero = document.querySelector('.hero');
-
-  function tick() {
-    const scrollY   = window.scrollY;
-    const heroH     = hero ? hero.offsetHeight : window.innerHeight;
-    const progress  = Math.min(scrollY / (heroH * 0.9), 1);
-
-    pages.forEach(page => {
-      const c = config[page.dataset.depth];
-      if (!c) return;
-      const driftedY = c.ty - c.drift * progress;
-      page.style.transform = `rotate(${c.r}deg) translate(${c.tx}px, ${driftedY}px)`;
-    });
-  }
-
-  window.addEventListener('scroll', tick, { passive: true });
-})();
-
-// ── Entrance animations ────────────────────────────────────────────
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.hero .animate-in').forEach(el => {
-    requestAnimationFrame(() => el.classList.add('visible'));
+  document.querySelectorAll('.reveal-item').forEach(el => {
+    if (prefersReduced) {
+      el.classList.add('is-visible');
+    } else {
+      observer.observe(el);
+    }
   });
+})();
 
-  document.querySelectorAll(':not(.hero) > .animate-in').forEach(el => observer.observe(el));
-}
-
-// ── Mobile nav toggle ──────────────────────────────────────────────
+// ── Mobile nav toggle ─────────────────────────────────────────────
 (function () {
   const hamburger  = document.getElementById('nav-hamburger');
   const mobileMenu = document.getElementById('nav-mobile-menu');
+  const nav        = document.getElementById('site-nav');
   if (!hamburger || !mobileMenu) return;
 
   function closeMenu() {
@@ -67,55 +39,70 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
   });
 
-  // Close when any menu link is clicked
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
-  // Close when Escape is pressed
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMenu();
   });
+
+  // Close when clicking outside
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target)) closeMenu();
+  });
 })();
 
-// ── Carousel ───────────────────────────────────────────────────────
+// ── Nav scroll state (add scrolled class for visual change) ───────
 (function () {
-  const track    = document.getElementById('carousel-track');
-  const prevBtn  = document.getElementById('carousel-prev');
-  const nextBtn  = document.getElementById('carousel-next');
-  const dots     = document.querySelectorAll('.carousel-dot');
-  const caption  = document.getElementById('carousel-caption');
-  const slides   = track.querySelectorAll('.carousel-slide');
-  const labels   = ['Home', 'Merge PDFs', 'Viewer with sidebar', 'Freeform mode', 'Remove pages'];
-  const total    = slides.length;
-  let current    = 0;
+  const nav = document.getElementById('site-nav');
+  if (!nav) return;
 
-  function goTo(index) {
-    current = (index + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => d.setAttribute('aria-selected', i === current ? 'true' : 'false'));
-    caption.textContent = labels[current];
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 24);
   }
 
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index, 10)));
-  });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 
-  // Keyboard: left/right arrows when carousel is focused
-  document.querySelector('.carousel').addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
-  });
+// ── Keyboard navigation enhancement ──────────────────────────────
+(function () {
+  // Highlight active section in nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-tab[href^="#"]');
 
-  // Touch swipe
-  let touchStartX = null;
-  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', e => {
-    if (touchStartX === null) return;
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
-    touchStartX = null;
+  if (!sections.length || !navLinks.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle(
+            'nav-tab--active',
+            link.getAttribute('href') === `#${entry.target.id}`
+          );
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => io.observe(s));
+})();
+
+// ── Download click feedback ───────────────────────────────────────
+(function () {
+  document.querySelectorAll('.req-item').forEach(link => {
+    link.addEventListener('click', function () {
+      const arrow = this.querySelector('.req-arrow');
+      if (!arrow) return;
+      const orig = arrow.textContent;
+      arrow.textContent = '✓';
+      arrow.classList.add('req-arrow--done');
+      setTimeout(() => {
+        arrow.textContent = orig;
+        arrow.classList.remove('req-arrow--done');
+      }, 2500);
+    });
   });
 })();
