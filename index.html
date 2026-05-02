@@ -30,7 +30,7 @@
   "operatingSystem": ["Windows 10", "Windows 11", "Linux"],
   "applicationCategory": "BusinessApplication",
   "applicationSubCategory": "PDFEditor",
-  "softwareVersion": "0.1.7",
+  "softwareVersion": "1.0.2",
   "fileSize": "14MB",
   "isAccessibleForFree": true,
   "license": "https://www.gnu.org/licenses/gpl-3.0.html",
@@ -60,7 +60,7 @@
     "name": "zParik",
     "url": "https://github.com/zParik"
   },
-  "downloadUrl": "https://github.com/zParik/Qyra/releases",
+  "downloadUrl": "https://github.com/zParik/Qyra/releases/latest",
   "screenshot": "https://zparik.github.io/Qyra-page/images/qyra-offline-pdf-toolkit-interface.png"
 }
 </script>
@@ -122,30 +122,19 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=JetBrains+Mono:wght@400;500;700&family=Spectral:ital,wght@0,400;0,600;1,400&family=Big+Shoulders+Stencil+Display:wght@700;800;900&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=JetBrains+Mono:wght@400;500;700&family=Big+Shoulders+Stencil+Display:wght@700;800;900&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <a href="#brief" class="skip-link">Skip to main content</a>
 
-<div class="classified-bar">
-  <div class="left">
-    <span><span class="blink"></span>&nbsp;&nbsp;TRANSMISSION OPEN</span>
-    <span>CHANNEL // ZP-04</span>
-  </div>
-  <div class="right">
-    <span>SECTION 7 / OFFICE OF DOCUMENT AFFAIRS</span>
-    <span>RECORD № Q-417-A</span>
-    <span id="ts">▣ ▣ : ▣ ▣ Z</span>
-  </div>
-</div>
 
 <nav id="site-nav">
   <div class="nav-mark">
     <div class="nav-seal">Q</div>
     <div class="nav-mark-text">
       <span class="nav-mark-name">QYRA</span>
-      <span class="nav-mark-sub">DOSSIER · v0.1.7-α</span>
+      <span class="nav-mark-sub">DOSSIER · v1.0.2</span>
     </div>
   </div>
   <div class="nav-tabs">
@@ -153,12 +142,12 @@
     <a href="#doctrine" class="nav-tab" data-num="§02">Doctrine</a>
     <a href="#operations" class="nav-tab" data-num="§03">Operations</a>
     <a href="#requisition" class="nav-tab" data-num="§04">Download</a>
-    <a href="https://github.com/zParik/Qyra" target="_blank" rel="noopener" class="nav-tab" data-num="§05">Source ↗</a>
+    <a href="https://github.com/zParik/Qyra" target="_blank" rel="noopener" class="nav-tab" data-num="↗">Source</a>
   </div>
   <div class="nav-spacer"></div>
   <div class="nav-status">
-    <span>CLEARANCE: PUBLIC</span>
-    <span style="color:var(--stamp-red); font-weight:700;">● LIVE</span>
+    <span>CLEARANCE: OPEN</span>
+    <span style="color:var(--stamp-red); font-weight:700;">● ACTIVE</span>
   </div>
   <button id="nav-hamburger" class="nav-hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-mobile-menu">
     <span></span><span></span><span></span>
@@ -170,7 +159,7 @@
     <a href="#doctrine" class="nav-mobile-link" data-num="§02">Doctrine</a>
     <a href="#operations" class="nav-mobile-link" data-num="§03">Operations</a>
     <a href="#requisition" class="nav-mobile-link" data-num="§04">Download</a>
-    <a href="https://github.com/zParik/Qyra" target="_blank" rel="noopener" class="nav-mobile-link" data-num="§05">Source ↗</a>
+    <a href="https://github.com/zParik/Qyra" target="_blank" rel="noopener" class="nav-mobile-link" data-num="↗">Source ↗</a>
   </div>
 </nav>
 
@@ -178,14 +167,15 @@
   <div class="hero-grid">
     <div class="case-head">
       <div class="case-meta">
-        <dl class="case-meta-block"><dt>FILE</dt><dd>Q-417-A / 0.1.7</dd></dl>
-        <dl class="case-meta-block"><dt>ISSUED</dt><dd>2026.04.25</dd></dl>
-        <dl class="case-meta-block"><dt>STATUS</dt><dd style="color:var(--stamp-red-deep);">ACTIVE / ALPHA</dd></dl>
+        <dl class="case-meta-block"><dt>FILE</dt><dd>Q-417-A / 1.0.2</dd></dl>
+        <dl class="case-meta-block"><dt>ISSUED</dt><dd>2026.05.02</dd></dl>
+        <dl class="case-meta-block"><dt>STATUS</dt><dd style="color:var(--stamp-green);">ACTIVE / STABLE</dd></dl>
+        <dl class="case-meta-block"><dt>CLASS</dt><dd style="color:var(--stamp-green);">SAFE</dd></dl>
         <dl class="case-meta-block"><dt>HANDLER</dt><dd>zPARIK</dd></dl>
       </div>
       <div class="case-file-num">CASE FILE — SUBJECT DOSSIER</div>
       <h1 class="case-codename"><span class="strike">QYRA</span><span class="sr-only"> — Free Offline PDF Toolkit & Adobe Acrobat Alternative</span></h1>
-      <p class="case-subname"><span class="red">aka.</span> &nbsp;the free offline PDF toolkit and ultimate open-source Adobe alternative they don't want you to have.</p>
+      <p class="case-subname"><span class="red">aka.</span> &nbsp;a free, open-source PDF operations suite. Authorized for public distribution. No subscription. No upload. No telemetry. GPL-3.0.</p>
       <p class="case-summary">
         Subject is a free, open-source PDF operations suite for Windows
         and Linux stations. Performs <strong>merge</strong>, <strong>split</strong>,
@@ -195,7 +185,6 @@
         <span class="redacted">cloud upload server</span>, no
         <span class="redacted">subscription harvest</span>.
         Files do not leave the perimeter. Not the file. Not the metadata. Not ever.
-        Unlike SmallPDF, iLovePDF, or Adobe Document Cloud — no document touches a remote server.
       </p>
       <div class="case-actions">
         <a href="#requisition" class="btn-stamp">▸ Download</a>
@@ -205,7 +194,7 @@
         <span><strong>LICENSE</strong> GPL-3.0</span>
         <span><strong>BUILD</strong> GitHub Actions / signed</span>
         <span><strong>SIZE</strong> ≈ 14 MB</span>
-        <span><strong>OS</strong> Win10+ · Linux x64</span>
+        <span><strong>OS</strong> Win10+ · macOS · Linux x64</span>
       </div>
     </div>
 
@@ -213,7 +202,6 @@
       <svg class="paperclip" viewBox="0 0 30 70" xmlns="http://www.w3.org/2000/svg">
         <path d="M 8 5 Q 8 1 12 1 L 22 1 Q 26 1 26 5 L 26 55 Q 26 65 18 65 Q 10 65 10 55 L 10 12 Q 10 8 14 8 L 22 8" fill="none" stroke="oklch(55% 0.005 80)" stroke-width="2" stroke-linecap="round"/>
       </svg>
-      <div class="tape"></div>
       <div class="exhibit-photo">
         <img src="images/qyra-offline-pdf-toolkit-interface.png" alt="Qyra free offline PDF toolkit interface — merge, split, compress and annotate PDFs on Windows and Linux with no upload" />
         <div class="exhibit-caption">
@@ -222,92 +210,23 @@
         </div>
       </div>
       <div class="stamp stamp-classified">CLASSIFIED<span class="stamp-sub">FREE TO DISTRIBUTE</span></div>
-      <div class="stamp stamp-eyes">FOR YOUR EYES<span class="stamp-sub">AND ONLY YOURS</span></div>
-      <div class="stamp stamp-approved">VERIFIED<span class="stamp-sub">2026.04.25</span></div>
     </div>
   </div>
 </section>
 
 <section class="doctrine" id="doctrine">
   <div class="doctrine-title">
-    <h2><strong>§ 02 ·</strong> OPERATING DOCTRINE: THE OPEN SOURCE PDF EDITOR</h2>
+    <h2><strong>§ 02 ·</strong> CONTAINMENT PARAMETERS: THE OPEN SOURCE PDF EDITOR</h2>
     <span>FOUR (4) NON-NEGOTIABLE PRINCIPLES</span>
   </div>
   <div class="doctrine-grid">
-    <div class="doctrine-item reveal-item"><div class="doctrine-num">PRINCIPLE 01</div><div class="doctrine-head">Free. Forever.</div><div class="doctrine-body">No trial. No freemium tier. No "starter plan." Released under GPL-3.0. Fork it, ship it, sell it — but keep it open.</div></div>
-    <div class="doctrine-item reveal-item"><div class="doctrine-num">PRINCIPLE 02</div><div class="doctrine-head">Off the Wire.</div><div class="doctrine-body">No internet required. Not on install. Not on launch. Not when handling files. The application has no use for your network.</div></div>
-    <div class="doctrine-item reveal-item"><div class="doctrine-num">PRINCIPLE 03</div><div class="doctrine-head">Files Stay Local.</div><div class="doctrine-body">Every operation runs on your hardware. Nothing leaves the machine — not the document, not the page count, not the filename.</div></div>
-    <div class="doctrine-item reveal-item"><div class="doctrine-num">PRINCIPLE 04</div><div class="doctrine-head">Read the Source.</div><div class="doctrine-body">Open source, verifiable, reproducible. Every release builds from a public GitHub Action. Trust nothing. Verify everything.</div></div>
+    <div class="doctrine-item reveal-item"><div class="doctrine-num">PRINCIPLE 01</div><div class="doctrine-head">Free. Forever.</div><div class="doctrine-body">No trial. No freemium tier. No "<span class="redacted">starter plan</span>." Released under GPL-3.0. Fork it, ship it, sell it — but keep it open.</div></div>
+    <div class="doctrine-item reveal-item"><div class="doctrine-num">PRINCIPLE 02</div><div class="doctrine-head">Off the Wire.</div><div class="doctrine-body">No internet required. Not on install. Not on launch. Not when handling files. The application has no use for your <span class="redacted">network</span>.</div></div>
+    <div class="doctrine-item reveal-item"><div class="doctrine-num">PRINCIPLE 03</div><div class="doctrine-head">Files Stay Local.</div><div class="doctrine-body">Every operation runs on your hardware. Nothing leaves the machine — not the document, not the page count, not the <span class="redacted">filename</span>.</div></div>
+    <div class="doctrine-item reveal-item"><div class="doctrine-num">PRINCIPLE 04</div><div class="doctrine-head">Read the Source.</div><div class="doctrine-body">Open source, verifiable, reproducible. Every release builds from a public GitHub Action. Trust <span class="redacted">nothing</span>. Verify everything.</div></div>
   </div>
 </section>
 
-<section class="intel-brief">
-  <div class="intel-brief-inner">
-    <header class="section-head">
-      <div class="section-head-num">§ 02.B</div>
-      <h2 class="section-head-title">Intelligence Briefing<span class="sr-only">: Qyra vs Adobe Acrobat vs iLovePDF vs Smallpdf — Free Offline PDF Tool Comparison</span></h2>
-      <div class="section-head-meta">COMPETITIVE FIELD ASSESSMENT<br>VERIFIED 2026</div>
-    </header>
-    <p class="section-lede">Field assessment of active PDF tools. The data indicates a clear gap: no dominant free, open-source, offline-first toolkit exists — until now.</p>
-    <div class="intel-table-wrap">
-      <table class="intel-table">
-        <thead>
-          <tr>
-            <th scope="col">Feature</th>
-            <th scope="col"><span class="it-brand">Qyra</span></th>
-            <th scope="col">Adobe Acrobat Pro</th>
-            <th scope="col">iLovePDF</th>
-            <th scope="col">Smallpdf</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Cost</td>
-            <td class="it-win">Free Forever — GPL-3.0</td>
-            <td class="it-lose">Paid Subscription</td>
-            <td class="it-lose">Paid Subscription</td>
-            <td class="it-lose">Paid Subscription</td>
-          </tr>
-          <tr>
-            <td>Offline Mode</td>
-            <td class="it-win">100% — No Internet Ever</td>
-            <td class="it-mid">Partial — Requires Login</td>
-            <td class="it-lose">Browser Only</td>
-            <td class="it-lose">Browser Only</td>
-          </tr>
-          <tr>
-            <td>File Privacy</td>
-            <td class="it-win">Files Never Leave Machine</td>
-            <td class="it-mid">Cloud Sync by Default</td>
-            <td class="it-lose">Files Uploaded to Server</td>
-            <td class="it-lose">Files Uploaded to Server</td>
-          </tr>
-          <tr>
-            <td>OS Support</td>
-            <td class="it-win">Windows + Linux</td>
-            <td class="it-mid">Windows + macOS Only</td>
-            <td class="it-mid">Web / Mobile</td>
-            <td class="it-mid">Web / Mobile</td>
-          </tr>
-          <tr>
-            <td>License</td>
-            <td class="it-win">GPL-3.0 — Auditable Source</td>
-            <td class="it-lose">Proprietary</td>
-            <td class="it-lose">Proprietary</td>
-            <td class="it-lose">Proprietary</td>
-          </tr>
-          <tr>
-            <td>Telemetry</td>
-            <td class="it-win">None — Zero Tracking</td>
-            <td class="it-lose">Extensive</td>
-            <td class="it-lose">Analytics + File Uploads</td>
-            <td class="it-lose">Analytics + File Uploads</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
 
 <section class="dossier" id="operations">
   <header class="section-head">
@@ -317,9 +236,8 @@
   </header>
   <p class="section-lede">
     The following operations cover an estimated 95% of common document handling
-    tasks performed in the field. Subject application replaces a multi-hundred-dollar
-    annual subscription to tools like Adobe Acrobat Pro or Foxit PDF Editor.
-    Each operation runs locally — no file upload to any server, anywhere on earth.
+    tasks performed in the field. Each operation runs locally — no file upload
+    to any server, anywhere on earth.
   </p>
 
   <article class="exhibit-entry reveal-item">
@@ -421,7 +339,7 @@
   <div class="acquisition-inner">
     <header class="section-head">
       <div class="section-head-num">§ 04</div>
-      <h2 class="section-head-title">Asset Requisition<span class="sr-only"> — Download Free Offline PDF Toolkit for Windows and Linux</span></h2>
+      <h2 class="section-head-title">Asset Requisition<span class="sr-only"> (Download) — Free Offline PDF Toolkit for Windows and Linux</span></h2>
       <div class="section-head-meta">DIRECT FROM ARSENAL<br>github.com/zParik/Qyra</div>
     </header>
     <p class="section-lede">Operator may requisition the binary directly. All artifacts are signed builds produced by the public GitHub Actions workflow. No installer wizards. No bundled toolbars. No telemetry handshake. No subscription. Qyra is free, offline, and always will be.</p>
@@ -432,8 +350,8 @@
           <div class="req-target">PLATFORM / WIN10+ · x64</div>
         </div>
         <div class="req-list">
-          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v0.1.7/qyra_0.1.7_x64_en-US.msi" target="_blank" rel="noopener"><span class="req-ext">.msi</span><span class="req-desc">MSI Installer<span class="req-rec">RECOMMENDED</span><small>standard windows installer / signed / ~14 MB</small></span><span class="req-arrow">→</span></a>
-          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v0.1.7/qyra_0.1.7_x64-setup.exe" target="_blank" rel="noopener"><span class="req-ext">.exe</span><span class="req-desc">NSIS Installer<small>alternate installer / smaller payload / ~12 MB</small></span><span class="req-arrow">→</span></a>
+          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v1.0.2/Qyra_1.0.2_x64_en-US.msi" target="_blank" rel="noopener"><span class="req-ext">.msi</span><span class="req-desc">MSI Installer<span class="req-rec">RECOMMENDED</span><small>standard windows installer / signed / ~8 MB</small></span><span class="req-arrow">→</span></a>
+          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v1.0.2/Qyra_1.0.2_x64-setup.exe" target="_blank" rel="noopener"><span class="req-ext">.exe</span><span class="req-desc">NSIS Installer<small>alternate installer / smaller payload / ~6 MB</small></span><span class="req-arrow">→</span></a>
         </div>
       </div>
       <div class="req-col">
@@ -442,14 +360,27 @@
           <div class="req-target">PLATFORM / x86_64 · Wayland + X11</div>
         </div>
         <div class="req-list">
-          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v0.1.7/qyra_0.1.7_amd64.AppImage" target="_blank" rel="noopener"><span class="req-ext">.AppImage</span><span class="req-desc">Universal AppImage<span class="req-rec">RECOMMENDED</span><small>no install required / portable / ~16 MB</small></span><span class="req-arrow">→</span></a>
-          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v0.1.7/qyra_0.1.7_amd64.deb" target="_blank" rel="noopener"><span class="req-ext">.deb</span><span class="req-desc">Debian Package<small>debian / ubuntu / mint / ~11 MB</small></span><span class="req-arrow">→</span></a>
-          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v0.1.7/qyra-0.1.7-1.x86_64.rpm" target="_blank" rel="noopener"><span class="req-ext">.rpm</span><span class="req-desc">RPM Package<small>fedora / rhel / opensuse / ~11 MB</small></span><span class="req-arrow">→</span></a>
+          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v1.0.2/Qyra_1.0.2_amd64.AppImage" target="_blank" rel="noopener"><span class="req-ext">.AppImage</span><span class="req-desc">Universal AppImage<span class="req-rec">RECOMMENDED</span><small>no install required / portable / ~79 MB</small></span><span class="req-arrow">→</span></a>
+          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v1.0.2/Qyra_1.0.2_amd64.deb" target="_blank" rel="noopener"><span class="req-ext">.deb</span><span class="req-desc">Debian Package<small>debian / ubuntu / mint / ~10 MB</small></span><span class="req-arrow">→</span></a>
+          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v1.0.2/Qyra-1.0.2-1.x86_64.rpm" target="_blank" rel="noopener"><span class="req-ext">.rpm</span><span class="req-desc">RPM Package<small>fedora / rhel / opensuse / ~10 MB</small></span><span class="req-arrow">→</span></a>
+        </div>
+      </div>
+      <div class="req-col">
+        <div class="req-col-head">
+          <div class="req-os">macOS</div>
+          <div class="req-target">PLATFORM / ARM64 + x64</div>
+        </div>
+        <div class="req-list">
+          <div style="font-family:var(--f-typewriter); font-size:0.75rem; color:var(--stamp-red-deep); border:1px dashed var(--stamp-red); padding:0.5rem; margin-bottom:0.8rem; line-height: 1.4;">
+            <strong>[!] FIELD WARNING:</strong> Operator does not own Apple hardware and has no intention of acquiring any. These builds are untested and may be "buggy as fuck." Proceed with extreme caution.
+          </div>
+          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v1.0.2/Qyra_1.0.2_universal.dmg" target="_blank" rel="noopener"><span class="req-ext">.dmg</span><span class="req-desc">Universal DMG<span class="req-rec">RECOMMENDED</span><small>standard macOS installer / ~17 MB</small></span><span class="req-arrow">→</span></a>
+          <a class="req-item" href="https://github.com/zParik/Qyra/releases/download/v1.0.2/Qyra_universal.app.tar.gz" target="_blank" rel="noopener"><span class="req-ext">.tar.gz</span><span class="req-desc">App Archive<small>portable app bundle / ~17 MB</small></span><span class="req-arrow">→</span></a>
         </div>
       </div>
     </div>
     <div class="req-footer">
-      <div>Authorized by signed GitHub Actions build pipeline. Source: <a href="https://github.com/zParik/Qyra" target="_blank" rel="noopener">github.com/zParik/Qyra</a> · Release archive: <a href="https://github.com/zParik/Qyra/releases" target="_blank" rel="noopener">github.com/zParik/Qyra/releases</a></div>
+      <div>Authorized by signed GitHub Actions build pipeline. Source: <a href="https://github.com/zParik/Qyra" target="_blank" rel="noopener">github.com/zParik/Qyra</a> · Release archive: <a href="https://github.com/zParik/Qyra/releases/latest" target="_blank" rel="noopener">github.com/zParik/Qyra/releases/latest</a></div>
       <div class="req-sig">— zParik</div>
     </div>
     <details class="verify-block">
@@ -457,7 +388,7 @@
       <div class="verify-body">
         <p>All release artifacts are produced exclusively by the public GitHub Actions workflow — no local builds, no manual uploads.</p>
         <ol>
-          <li>Download the artifact and its <code>.sha256</code> checksum from the <a href="https://github.com/zParik/Qyra/releases" target="_blank" rel="noopener">release archive</a>.</li>
+          <li>Download the artifact and its <code>.sha256</code> checksum from the <a href="https://github.com/zParik/Qyra/releases/latest" target="_blank" rel="noopener">latest release</a>.</li>
           <li>On Linux, run <code>sha256sum -c *.sha256</code>. On Windows, run <code>Get-FileHash &lt;filename&gt; -Algorithm SHA256</code> and compare the output against the published checksum.</li>
           <li>Build logs are publicly viewable at <a href="https://github.com/zParik/Qyra/actions" target="_blank" rel="noopener">github.com/zParik/Qyra/actions</a>. Every release maps 1:1 to a workflow run.</li>
         </ol>
@@ -470,26 +401,16 @@
 <footer class="footer">
   <div class="footer-inner">
     <div><h4>Section 7 — Qyra</h4><p>A free, offline-first PDF toolkit for Windows and Linux. GPL-3.0 open source. Built because the alternative is renting your own files back from a corporation.</p></div>
-    <div><h4>Channels</h4><p><a href="https://github.com/zParik/Qyra" target="_blank" rel="noopener">▸ Source repository</a><br><a href="https://github.com/zParik/Qyra/releases" target="_blank" rel="noopener">▸ Release archive</a><br><a href="https://github.com/zParik/Qyra/issues" target="_blank" rel="noopener">▸ Field reports / issues</a><br><a href="https://github.com/zParik/Qyra#readme" target="_blank" rel="noopener">▸ Documentation / README</a></p></div>
+    <div><h4>Channels</h4><p><a href="https://github.com/zParik/Qyra" target="_blank" rel="noopener">▸ Source repository</a><br><a href="https://github.com/zParik/Qyra/releases/latest" target="_blank" rel="noopener">▸ Latest release</a><br><a href="https://github.com/zParik/Qyra/issues" target="_blank" rel="noopener">▸ Field reports / issues</a><br><a href="https://github.com/zParik/Qyra#readme" target="_blank" rel="noopener">▸ Documentation / README</a></p></div>
     <div><h4>Authentication</h4><p>Released under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPL-3.0</a>.<br>Reproducible builds via GitHub Actions.<br>No analytics. No telemetry. No tracking pixel.</p></div>
   </div>
   <div class="footer-bottom">
     <span>END OF FILE — Q-417-A — DO NOT REPRODUCE OUTSIDE AUTHORIZED CHANNELS (j/k it's GPL)</span>
     <span>EOF · 0xQYRA</span>
+    <span>[DATA EXPUNGED] · [REDACTED] · [SEE ADDENDUM Q-417-A/2]</span>
   </div>
 </footer>
 
-<script>
-(function () {
-  const ts = document.getElementById('ts');
-  if (!ts) return;
-  function tick() {
-    const d = new Date();
-    ts.textContent = `${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}:${String(d.getUTCSeconds()).padStart(2,'0')} Z`;
-  }
-  tick(); setInterval(tick, 1000);
-})();
-</script>
 <script src="main.js"></script>
 
 </body>
